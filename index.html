@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tonaker - Toko Naga Stiker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      .motor-card {
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .motor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+      }
+      .btnDetail {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <div class="container p-0 mb-4 mt-4 rounded-3 shadow bg-white">
+        <!-- menu -->
+         <nav class="d-md-flex p-4">
+            <div><h1>Naga Sticker Decal Automotive</h1></div>
+            <div class="ms-auto my-auto">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item mx-md-3">
+                      <a href="javascript:void(0);" class="text-decoration-none text-dark fw-bold" id="btnProdukKami">Produk Kami</a>
+                    </li>
+                    <li class="list-inline-item mx-md-3"><a href="#tentang" class="text-decoration-none text-dark fw-bold">Tentang Kami</a></li>
+                    <li class="list-inline-item mx-md-3"><a href="#order" class="text-decoration-none text-dark fw-bold">Cara Order</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Modal Pilihan Varian Motor -->
+        <div class="modal fade" id="motorModal" tabindex="-1" aria-labelledby="motorModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="motorModalLabel">🏍️ Pilih Varian Motor Anda</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-4">
+                <p class="text-center mb-4">Pilih merek dan tipe motor untuk melihat desain sticker yang sesuai</p>
+                
+                <div class="row row-cols-2 row-cols-md-3 g-3">
+                  <!-- Honda -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100" data-motor="Honda">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">🏍️</h3>
+                        <h6 class="fw-bold">Honda</h6>
+                        <small class="text-muted">Beat, Vario, PCX, CBR</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Yamaha -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100" data-motor="Yamaha">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">🏍️</h3>
+                        <h6 class="fw-bold">Yamaha</h6>
+                        <small class="text-muted">Mio, Aerox, NMAX, R15</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Suzuki -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100" data-motor="Suzuki">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">🏍️</h3>
+                        <h6 class="fw-bold">Suzuki</h6>
+                        <small class="text-muted">Satria, NEX, GSX</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kawasaki -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100" data-motor="Kawasaki">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">🏍️</h3>
+                        <h6 class="fw-bold">Kawasaki</h6>
+                        <small class="text-muted">Ninja, KLX, Versys</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Vespa -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100" data-motor="Vespa">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">🛵</h3>
+                        <h6 class="fw-bold">Vespa</h6>
+                        <small class="text-muted">Sprint, Primavera, GTS</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Universal -->
+                  <div class="col">
+                    <div class="card motor-card shadow-sm h-100 border-success" data-motor="Semua">
+                      <div class="card-body text-center">
+                        <h3 class="mb-2">✨</h3>
+                        <h6 class="fw-bold text-success">Semua Motor</h6>
+                        <small class="text-muted">Universal Design</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- banner -->
+        <div class="px-4 mb-4">
+        <img src="images/banner.png" class="w-100"/>
+        </div>
+
+        <!-- footer -->
+         <h3 class="text-center" id="koleksi">Koleksi Toko</h3>
+         <div class="text-center mx-auto fw-light px-3">"Naga Sticker - Kuasai Jalanan dengan Gaya! Unleash the dragon in your ride! Decal stiker premium untuk semua jenis kendaraan motor. Desain beragam: racing, elegant, tribal, juga bisa custom sesuai keinginan Anda. Bahan vinyl berkualitas tinggi, anti luntur, tahan cuaca dan mudah dipasang. Bikin motor standar jadi luar biasa! Harga terjangkau, kualitas juara. Jadilah yang paling stand out di jalan!"</div>
+
+         <!-- Filter Info -->
+         <div class="text-center my-3">
+           <span class="badge bg-secondary fs-6" id="filterBadge">Menampilkan: Semua Produk</span>
+           <button class="btn btn-sm btn-outline-secondary ms-2" id="resetBtn" style="display:none;">Reset Filter</button>
+         </div>
+
+    <div class="row row-cols-md-3 p-5 gx-5 gy-4">
+      <div class="col mb-4 product-item" data-motor="Honda">
+        <div class="card shadow">
+          <img src="images/Scoopy 2025-k1.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Honda</span>
+            <p class="card-text">Sticker Racing Striping Honda Scoopy - Desain sporty dan elegan</p>
+          </div>
+          <div class="d-none deskripsi"><p>Sticker premium untuk Honda Beat dengan desain racing yang sporty. Bahan vinyl berkualitas tinggi, anti luntur, tahan cuaca dan mudah dipasang. Bikin Scoopy kamu tampil lebih keren dan stand out di jalan!</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 275.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 product-item" data-motor="Yamaha">
+        <div class="card shadow">
+          <img src="images/design3.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Yamaha</span>
+            <p class="card-text">Decal Custom Yamaha NMAX - Premium quality tampilan maksimal</p>
+          </div>
+          <div class="d-none deskripsi"><p>Decal eksklusif untuk Yamaha NMAX dengan kualitas premium. Desain elegant dan modern yang membuat NMAX Anda terlihat lebih mewah. Material terbaik dengan daya rekat kuat dan tahan lama. Tersedia berbagai pilihan warna dan motif.</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 product-item" data-motor="Suzuki">
+        <div class="card shadow">
+          <img src="images/design4.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Suzuki</span>
+            <p class="card-text">Striping Suzuki GSX - Desain racing performa agresif</p>
+          </div>
+          <div class="d-none deskripsi"><p>Striping racing untuk Suzuki GSX yang menampilkan karakter agresif dan sporty. Desain khusus untuk GSX R150 dan S150. Bahan vinyl premium dengan cutting presisi dan finishing sempurna. Bikin GSX Anda makin gahar!</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 product-item" data-motor="Kawasaki">
+        <div class="card shadow">
+          <img src="images/design5.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Kawasaki</span>
+            <p class="card-text">Sticker Kawasaki Ninja - Tampilan super sport memukau</p>
+          </div>
+          <div class="d-none deskripsi"><p>Sticker racing untuk Kawasaki Ninja dengan desain super sport yang memukau. Cocok untuk Ninja 250, 150, dan ZX series. Material premium dengan warna tajam dan daya tahan maksimal. Buat Ninja Anda makin terlihat ganas dan racing!</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 product-item" data-motor="Honda">
+        <div class="card shadow">
+          <img src="images/design2.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Honda</span>
+            <p class="card-text">Decal Honda Vario - Modern & Stylish Design</p>
+          </div>
+          <div class="d-none deskripsi"><p>Decal stylish untuk Honda Vario dengan desain modern dan trendy. Cocok untuk Vario 125, 150, dan 160. Pilihan warna beragam dengan motif kekinian. Bikin Vario Anda tampil beda dan jadi pusat perhatian!</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 product-item" data-motor="Yamaha">
+        <div class="card shadow">
+          <img src="images/design3.jpeg" class="card-img-top">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Yamaha</span>
+            <p class="card-text">Striping Yamaha Aerox - Racing Style Premium</p>
+          </div>
+          <div class="d-none deskripsi"><p>Striping racing untuk Yamaha Aerox dengan style premium yang menawan. Design aero dynamic yang mempercantik tampilan Aerox Anda. Material berkualitas tinggi dengan hasil finishing rapi. Stand out dari yang lain!</p></div>
+          <div class="card-footer d-md-flex">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+            <span class="ms-auto text-danger d-block text-center fw-bold harga">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tentang kami-->
+<div id="tentang" class="px-4 py-4 bg-secondary text-center">
+  <div class="mx-auto w-75">
+    <h3 class="text-white">Tentang Kami</h3>
+    <p class="text-center text-white"><img src="images/about-us.png" align="left" style="width: 100px; height: auto" class="me-3 mb-3"/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus aspernatur aut eius eveniet accusamus inventore adipisci ex corrupti maxime facilis dolores iusto quia qui soluta, at eos quaerat deleniti repellendus doloremque ab numquam exercitationem, quo harum. Autem eum eveniet nesciunt, neque obcaecati aut quibusdam odio velit quisquam. Minima, recusandae in?</p>
+  </div>
+</div>
+
+<!-- cara order -->
+<div id="order" class="px-4 py-4 bg-light text-center">
+  <div class="mx-auto w-75">
+    <h3>Cara Order</h3>
+    <p class="text-center"><img src="images/order.png" align="right" style="width: 100px; height: auto" class="ms-3 mb-3" />Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio odit hic non earum corporis architecto sint, quidem quas minus nesciunt voluptatibus doloremque facilis magnam veniam id officiis! Doloremque quisquam corrupti qui est eaque dignissimos consectetur tempore aperiam explicabo, corporis nobis?</p>
+  </div>
+</div>
+
+<!-- copyright -->
+    <div class="text-center p-4 border-top">&copy; 2025 Tonaker. - Toko Naga Sticker -</div>
+  </div>
+  
+  <!-- modal detail produk -->
+  <button type="button" class="btn btn-primary d-none btnModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 modalTitle" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+          <div class="modalImage col-md-6 col-12"></div>
+          <div class="col-md-6 col-12">
+            <div class="modalDeskripsi"></div>
+            <div class="d-md-flex mt-3">
+              <a href="https://shopee.co.id/-COD-Decal-Sticker-Motor-Full-Body-Honda-Scoopy-2025-Motif-Simplelis-Kode-SCYN13-Desain-Bisa-Custom-i.196525344.47901741358?extraParams=%7B%22display_model_id%22%3A216337601522%2C%22model_selection_logic%22%3A3%7D&sp_atk=e454778d-18b3-426f-b7a3-123bec1ac139&xptdk=e454778d-18b3-426f-b7a3-123bec1ac139" class="btn btn-sm btn-warning d-block btnBeli" target="_blank">Beli Produk Ini</a>
+              <span class="ms-auto text-danger d-block text-center fw-bold fs-5 modalHarga"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>
